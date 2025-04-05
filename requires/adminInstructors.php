@@ -43,7 +43,6 @@
             <div class="list-column">Actions</div>
         </div>
         <div id="instructors-data" class="list-data">
-            <!-- Instructor data will be loaded here dynamically -->
         </div>
     </div>
 </section>

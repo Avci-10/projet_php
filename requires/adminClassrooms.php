@@ -27,7 +27,7 @@
             <div class="timetable-cell header-cell">Friday</div>
         </div>
         <div id="classroom-timetable" class="timetable-body">
-            <!-- Classroom availability data will be loaded here dynamically -->
+
         </div>
     </div>
 </section>

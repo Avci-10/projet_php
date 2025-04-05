@@ -1,4 +1,3 @@
-// Mock data for demonstration
 const mockData = {
     students: [
         { id: "STU001", name: "John Smith", email: "john@example.com", program: "Computer Science" },
@@ -26,7 +25,6 @@ const mockData = {
     }
 };
 
-// Load mock data on page load
 document.addEventListener('DOMContentLoaded', function() {
     loadStats();
     loadStudents();
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
 });
 
-// Load dashboard stats
 function loadStats() {
     document.getElementById('student-count').textContent = mockData.stats.studentCount;
     document.getElementById('instructor-count').textContent = mockData.stats.instructorCount;
@@ -45,7 +42,6 @@ function loadStats() {
     document.getElementById('events-count').textContent = mockData.stats.eventsCount;
 }
 
-// Load students list
 
 
 function loadStudents() {
@@ -60,7 +56,6 @@ function loadStudents() {
     });
 }
 
-// Load instructors list
 function loadInstructors() {
     const instructorsData = document.getElementById('instructors-data');
     instructorsData.innerHTML = '';
@@ -110,9 +105,7 @@ function loadClassrooms() {
     });
 }
 
-// Setup event listeners
 function setupEventListeners() {
-    // Navigation
     document.querySelectorAll('.sidebar nav a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -125,7 +118,6 @@ function setupEventListeners() {
         });
     });
 
-    // Student form toggle
     document.getElementById('add-student-btn').addEventListener('click', () => {
         document.getElementById('student-form-container').style.display = 'block';
         document.getElementById('students-list').style.display = 'none';
@@ -137,7 +129,6 @@ function setupEventListeners() {
         document.getElementById('studentForm').reset();
     });
 
-    // Instructor form toggle
     document.getElementById('add-instructor-btn').addEventListener('click', () => {
         document.getElementById('instructor-form-container').style.display = 'block';
         document.getElementById('instructors-list').style.display = 'none';
@@ -149,7 +140,7 @@ function setupEventListeners() {
         document.getElementById('instructorForm').reset();
     });
 
-    // Form submissions
+
     document.getElementById('studentForm').addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -160,10 +151,10 @@ function setupEventListeners() {
             program: formData.get('program')
         };
 
-        // Add to mock data
+
         mockData.students.push(newStudent);
 
-        // Update UI
+
         loadStudents();
         document.getElementById('student-form-container').style.display = 'none';
         document.getElementById('students-list').style.display = 'block';
@@ -185,16 +176,13 @@ function setupEventListeners() {
             courses: 0
         };
 
-        // Add to mock data
         mockData.instructors.push(newInstructor);
 
-        // Update UI
         loadInstructors();
         document.getElementById('instructor-form-container').style.display = 'none';
         document.getElementById('instructors-list').style.display = 'block';
         document.getElementById('instructorForm').reset();
 
-        // Update stats
         mockData.stats.instructorCount++;
         loadStats();
     });

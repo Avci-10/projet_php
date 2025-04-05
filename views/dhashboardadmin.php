@@ -11,21 +11,19 @@
 <!-- Sidebar -->
 <?php require '../requires/sideNavbar.php'; ?>
 
-<!-- Main Content -->
+
 <main class="content">
 
 <?php require('../requires/navbar.php'); ?>
-    <!-- Home Section -->
+
 <?php require '../requires/adminHome.php'; ?>
 
-    <!-- Students Section -->
+
     <?php require '../requires/adminStudents.php'; ?>
 
 
-    <!-- Instructors Section -->
     <?php require '../requires/adminInstructors.php'; ?>
 
-    <!-- Classrooms Section -->
     <?php require '../requires/adminClassrooms.php'; ?>
 
 </main>
